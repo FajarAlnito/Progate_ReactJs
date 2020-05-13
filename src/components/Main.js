@@ -1,5 +1,6 @@
 import React from 'react';
 import Lesson from './Lesson';
+import ContactForm from './ContactForm';
 
 class Main extends React.Component{
     
@@ -35,15 +36,23 @@ class Main extends React.Component{
                     </div>
                     <div className="lesson-container">
                         <h3 className="section-title">Pelajaran</h3>
-                        {lessonList.map((lessonItem)=>{
+                        
+                        {lessonList.map((lessonItem, index)=>{
+                            
                             return(
                                 <Lesson 
+                                    key={lessonItem.name}
                                     name={lessonItem.name}
                                     image={lessonItem.image}
                                     introduction={lessonItem.introduction}
                                 />
+                                
                             )
                         })}
+                    </div>
+                    <div className="contact-container">
+                        <h3>Hubungi Kami</h3>
+                        <ContactForm />
                     </div>
                 </div>
             </div>
